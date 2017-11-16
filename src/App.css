@@ -1,0 +1,27 @@
+body {
+  background-color: #EDEDF2;
+}
+
+.content {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+}
+
+header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.logo_svg {
+  width: 100px;
+  max-width: 120px;
+  vertical-align: middle;
+}
+
+.form-custom {
+  width: 250px;
+  margin: 0 auto;
+}
