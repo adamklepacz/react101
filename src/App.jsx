@@ -49,6 +49,13 @@ export class App extends React.Component {
     }
   }
 
+  clearList() {
+    this.setState({
+      buyItems: [],
+      message: 'No items on the list. Add some.'
+    })
+  }
+
   render() {
     const {buyItems, message} = this.state;
 
@@ -91,7 +98,7 @@ export class App extends React.Component {
           <tr>
           <th scope="col">#</th>
           <th scope="col">Item</th>
-          <th scope="col">Action</th>
+          <th scope="col" className="text-right">Action</th>
           </tr>
           </thead>
           <tbody>
@@ -100,12 +107,12 @@ export class App extends React.Component {
               return (
                 <tr key={index}>
                 <th scope="row">{index + 1}</th>
-                <td>{item}</td>
+                <td className="text-left">{item}</td>
                 <td className="text-right">
                 <button
-                onClick={(e) => this.removeItem(item)}
-                type="button"
-                className="btn btn-outline-danger btn-sm"
+                  onClick={(e) => this.removeItem(item)}
+                  type="button"
+                  className="btn btn-outline-danger btn-sm"
                 >Remove</button>
                 </td>
                 </tr>
@@ -115,6 +122,14 @@ export class App extends React.Component {
           </tbody>
           <tfoot>
             <tr>
+              <td colSpan="2"></td>
+              <td className="text-right">
+                <button
+                  onClick={(e) => this.clearList()}
+                  type="button"
+                  className="btn btn-outline-primary btn-sm"
+                 >Clear list</button>
+              </td>
             </tr>
           </tfoot>
           </table>
